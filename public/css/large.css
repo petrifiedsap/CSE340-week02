@@ -1,0 +1,21 @@
+@media screen and (min-width: 768px) {
+#car_info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 5vw;
+    grid-gap: 3vw;
+}
+#upgrades {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+#feature_car {
+    text-align: center;
+}
+.car_pic_label {
+    top: 30vw;
+    left: 15vw;
+}
+
+
+}
