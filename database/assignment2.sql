@@ -1,4 +1,4 @@
--- Query 1 
+-- Query 1 add to account
 INSERT INTO public.account (
 	account_firstname, 
 	account_lastname, 
