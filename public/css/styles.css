@@ -116,3 +116,32 @@ footer p {
   padding: 6vw 2vw;
 }
 
+#inv-display li {
+  list-style-type: none;
+}
+#inv-display img {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+}
+
+#singleItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#singleItem h2 {
+  padding: 3vw;
+}
+.toFlex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#inv-display p, #inv-display span {
+  padding: 2vw;
+}
+.namePrice {
+  background-color: var(--bg-dark)
+  
+}

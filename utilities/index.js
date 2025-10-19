@@ -57,4 +57,39 @@ Util.buildClassificationGrid = async function(data){
   return grid
 }
 
+/***********
+ * Build the ind item view HTML
+ ************/
+Util.buildItemGrid = async function(data){
+  let grid
+  if(data.length > 0){
+    grid = '<ul id="inv-display">'
+    data.forEach(vehicle => { 
+      grid += '<li>'
+      grid += '<section id="singleItem">'
+      grid += '<div class="titlePic">'
+      grid += '<h1>' + vehicle.inv_make + ' ' + vehicle.inv_model + '</h1>'
+      grid +=  '<img src="' + vehicle.inv_image 
+      +'" alt="Image of '+ vehicle.inv_make + ' ' + vehicle.inv_model 
+      +' on CSE Motors" />'
+      grid += '</div>'
+      grid += '<div class="namePrice">'
+      grid += '<h2>' + vehicle.inv_year + ' ' + vehicle.inv_make + ' ' + vehicle.inv_model + '</h2>'
+      grid += '<div class="toFlex">'
+      grid += '<span>$' 
+      + new Intl.NumberFormat('en-US').format(vehicle.inv_price)  +  '</span>'
+      grid += '<p>' + vehicle.inv_miles.toLocaleString('en-US') + ' miles' + '</p>'
+      grid += '<p>' + vehicle.inv_color + '</p>'
+      grid += '</div>'
+      grid += '<p>' + vehicle.inv_description + '</p>'
+      grid += '</section>'
+      grid += '</li>'
+    })
+    grid += '</ul>'
+  } else { 
+    grid += '<p class="notice">Sorry, no matching vehicles could be found.</p>'
+  }
+  return grid
+}
+
 module.exports = Util
