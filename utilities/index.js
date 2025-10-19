@@ -30,7 +30,7 @@ Util.getNav = async function (req, res, next) {
 Util.buildClassificationGrid = async function(data){
   let grid
   if(data.length > 0){
-    grid = '<ul id="inv-display">'
+    grid = '<ul id="inventory-display">'
     data.forEach(vehicle => { 
       grid += '<li>'
       grid +=  '<a href="../../inv/detail/'+ vehicle.inv_id 
@@ -38,7 +38,7 @@ Util.buildClassificationGrid = async function(data){
       + 'details"><img src="' + vehicle.inv_thumbnail 
       +'" alt="Image of '+ vehicle.inv_make + ' ' + vehicle.inv_model 
       +' on CSE Motors" /></a>'
-      grid += '<div class="namePrice">'
+      grid += '<div class="nameAndPrice">'
       grid += '<hr />'
       grid += '<h2>'
       grid += '<a href="../../inv/detail/' + vehicle.inv_id +'" title="View ' 
@@ -68,7 +68,7 @@ Util.buildItemGrid = async function(data){
       grid += '<li>'
       grid += '<section id="singleItem">'
       grid += '<div class="titlePic">'
-      grid += '<h1>' + vehicle.inv_make + ' ' + vehicle.inv_model + '</h1>'
+   //   grid += '<h1>' + vehicle.inv_make + ' ' + vehicle.inv_model + '</h1>'
       grid +=  '<img src="' + vehicle.inv_image 
       +'" alt="Image of '+ vehicle.inv_make + ' ' + vehicle.inv_model 
       +' on CSE Motors" />'
@@ -79,7 +79,7 @@ Util.buildItemGrid = async function(data){
       grid += '<span>$' 
       + new Intl.NumberFormat('en-US').format(vehicle.inv_price)  +  '</span>'
       grid += '<p>' + vehicle.inv_miles.toLocaleString('en-US') + ' miles' + '</p>'
-      grid += '<p>' + vehicle.inv_color + '</p>'
+      grid += '<p>' + 'color: ' + vehicle.inv_color + '</p>'
       grid += '</div>'
       grid += '<p>' + vehicle.inv_description + '</p>'
       grid += '</section>'

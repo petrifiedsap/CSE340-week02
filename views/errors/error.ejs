@@ -6,9 +6,13 @@
     } %>
 
 <!-- possible future message -->
- <%# messages() %>
+ <% if (message) { %>
+    <div class="message">
+        <%-message %>
+    </div>
+ <% } %>
 
  <!--  Inventory items display -->
-   <%- grid %>
+   <%# grid %>
 
    
